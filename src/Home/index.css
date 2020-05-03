@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+}
+.Parent {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Home{
+    width: 100%;
+}
+
+div.footerHome{
+    font-size: 16px;
+    width: 100%;
+}
+
+h1{
+    font-size: 40px;
+}
+
+sup{
+    font-size: 24px;
+    font-weight: 100;
+    padding: 10px;
+}
+
+div.buttons {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+button {
+    padding: 15px 25px;
+    color: black;
+    background-color: transparent;
+    border: 1px solid black;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+}
+
+button:hover{
+    color: white;
+    background-color: #282828;
+}
+
+.createGameButton {
+    background-color: #282828;
+    color: white;
+    border: 1px solid #282828;
+}
+
+.createGameButton:hover {
+    color: black;
+    background-color: white;
+    border: 1px black solid;
+}
+
+
+.joinGame{
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 25px;
+    width: 30%;
+    margin-left: 50%;
+    margin-top: 25px;
+    transform: translateX(-50%);
+    transition: 0.2s ease-in-out;
+}
+
+.joinGame:hover{
+    background-color: rgba(0, 0, 0, 0.01);
+}
+
+.joinGame input{
+    width: calc(100% - 105px);
+    padding-left: 25px;
+    font-size: 15px;
+    float: left;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    border-radius: 25px;
+}
+
+.joinGame input:focus{
+    outline: none;
+}
+.joinGame button {
+    margin: 5px 5px 0 0;
+    padding: 0px;
+    height: 30px;
+    border: solid 1px black;
+    border-radius: 22px;
+    float: right;
+    width: 75px;
+}
+
+.gameStatus {
+    margin-top: 50px;
+}
+
+
+
+div.footerHome a {
+    font-size: 14px;
+    color: #282828;
+}
+
+div.footerHome p a {
+    font-size: 16px;
+    color: #282828;
+}
+
+div.footerHome p {
+    text-decoration: none;
+    color: grey;
+}
+
+@media only screen and (max-width: 350px) {
+    h1{
+        font-size: 35px;
+    }
+
+    sup{
+        font-size: 22px;
+        font-weight: 100;
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    div.buttons {
+        width: 80%;
+    }
+    div.buttons > *{
+        margin: 10px;
+    }
+    .joinGame{
+        width: 80%;
+    }
+    div.footerHome{
+        width: 80% !important;
+    }
+
+}

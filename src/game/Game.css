@@ -1,0 +1,115 @@
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+}
+.game{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.moves {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 96px;
+  width: 50%;
+  height: 192px;
+}
+
+.moves div {
+  width: 192px;
+  height: 192px;
+  border-radius: 50%;
+}
+
+.winner {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.move {
+  background-color: rgba(0, 0, 0, 0.030);
+  width: 144px;
+  height: 144px;
+  border-radius: 50%;
+}
+
+.move img{
+  padding: 25%;
+  width: 50%;
+}
+
+.makeMove {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 25px;
+
+}
+
+.makeMove .move{
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.makeMove .move:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.gameID_Info{
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+}
+
+
+@media only screen and (max-width: 500px) {
+  .move{
+    width: 72px;
+    height: 72px; 
+  }
+  .moves {
+    border-radius: 52px;
+    width: 258px;
+    height: 108px;
+  }
+  
+  .moves div {
+    width: 108px;
+    height: 108px;
+  }
+}
+
+
+@media only screen and (max-width: 850px) {
+  .move{
+    width: 96px;
+    height: 96px; 
+  }
+  .moves {
+    border-radius: 66px;
+    width: 306px;
+    height: 132px;
+  }
+  
+  .moves div {
+    width: 132px;
+    height: 132px;
+  }
+}
+
+.online {
+  position: absolute;
+  right: 15px;
+}
+
+.goHome {
+  color: grey;
+  position: absolute;
+  left: 15px;
+}

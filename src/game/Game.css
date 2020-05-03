@@ -8,7 +8,6 @@ body {
   display: table-cell;
   vertical-align: middle;
 }
-
 .moves {
   margin: 0 auto;
   display: flex;
@@ -69,6 +68,9 @@ body {
 
 
 @media only screen and (max-width: 500px) {
+  .gameID_Info{
+      bottom: -50px;
+  }
   .move{
     width: 72px;
     height: 72px; 

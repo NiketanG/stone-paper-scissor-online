@@ -1,0 +1,10 @@
+node_modules/**
+yarn.lock
+package-lock.json
+public
+package-lock.json
+*-error.log
+.eslintcache
+.env
+.gitignore
+.eslintignore

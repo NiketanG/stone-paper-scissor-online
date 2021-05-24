@@ -1,0 +1,63 @@
+{
+	"name": "web",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"start": "craco start",
+		"build": "craco build",
+		"type-check": "tsc --pretty",
+		"format": "prettier --write .",
+		"lint": "eslint . --ext ts --ext tsx --ext js"
+	},
+	"dependencies": {
+		"@craco/craco": "^6.1.2",
+		"autoprefixer": "^9",
+		"postcss": "^7",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-router-dom": "^5.2.0",
+		"react-scripts": "4.0.3",
+		"react-toastify": "^7.0.4",
+		"socket.io-client": "^4.1.2",
+		"typescript": "^4.2.4"
+	},
+	"devDependencies": {
+		"@types/node": "^15.6.0",
+		"@types/react": "^17.0.6",
+		"@types/react-dom": "^17.0.5",
+		"@types/react-router-dom": "^5.1.7",
+		"@typescript-eslint/eslint-plugin": "^4.24.0",
+		"@typescript-eslint/parser": "^4.24.0",
+		"eslint": "^7.26.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-react": "^7.23.2",
+		"husky": "^6.0.0",
+		"lint-staged": "^11.0.0",
+		"prettier": "^2.3.0",
+		"tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged",
+			"pre-push": "yarn run type-check"
+		}
+	},
+	"lint-staged": {
+		"*.@(ts|tsx)": [
+			"yarn lint",
+			"yarn format"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	}
+}

@@ -1,0 +1,95 @@
+body {
+    text-align: center;
+}
+.parent{
+    display: table;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    height: calc(100% - 68px - 68px);
+    width: 100%;
+}
+
+.Info{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+h1{
+    font-size: 40px;
+}
+
+sup{
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 24px;
+    font-weight: 100;
+    padding: 10px;
+}
+
+div.footer{
+    font-size: 16px;
+    width: 100%;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%); 
+}
+
+div.footer a {
+    font-size: 14px;
+    color: #282828;
+}
+
+div.footer p a {
+    font-size: 16px;
+    color: #282828;
+}
+
+div.footer p {
+    text-decoration: none;
+    color: grey;
+}
+p {
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 18px;
+}
+b {
+    color: black;
+    font-size: 20px;
+}
+.title {
+    text-decoration: none;
+    color: black;
+}
+.title:active{
+    color: black;
+}
+.title:visited{
+    color: black;
+}
+.content {
+    width: 50%;
+    text-align: center;
+    margin-left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%); 
+}
+@media only screen and (max-width: 400px) {
+    h1{
+        font-size: 35px;
+    }
+
+    sup{
+        font-size: 22px;
+    }
+    .content {
+        width: 80%;
+    }
+    p {
+        font-size: 14px;
+    }
+    b{
+        font-size: 15px;
+    }
+}

@@ -1,8 +1,8 @@
-# Online 2 Player Tic-Tac-Toe 
+# Online 2 Player Stone-Paper-Scissor 
 ##### Web
 
 
-[Demo](http://bit.ly/tic-tac-toe-online)
+[Demo](http://bit.ly/stone-paper-scissor)
 
 ### How to use :
 

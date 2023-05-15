@@ -1,6 +1,6 @@
 # Online 2 Player Stone-Paper-Scissor
 
-[Demo](http://bit.ly/stone-paper-scissor)
+[Demo](https://stone-paper-scissor.fly.dev/)
 
 ### How to use :
 

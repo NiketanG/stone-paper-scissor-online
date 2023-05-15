@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+	font-family: Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	color-scheme: light;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+} */
+
+body {
+	font-family: "Poppins", sans-serif;
+
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.Toastify__toast-container {
+	@apply px-4 md:px-0;
+}
+
+.Toastify__toast {
+	@apply rounded-lg mb-4 md:mb-0;
+}

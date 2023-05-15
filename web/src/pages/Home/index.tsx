@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
-import { toast, Slide } from "react-toastify";
+// import React, { useState } from "react";
+import { useState } from "preact/hooks";
+import { FunctionalComponent } from "preact";
+
+import { useNavigate } from "react-router-dom";
+
+// import { useHistory } from "react-router-dom";
 
 import { API_URL } from "../../utils/constants";
-import { errorToast, showToast } from "../../utils/showToast";
 import { searchGame } from "../../utils/searchGame";
+import { errorToast, showToast } from "../../utils/showToast";
 
-const Home: React.FC<any> = () => {
+const Home: FunctionalComponent<any> = () => {
 	const [gameId, setGameId] = useState(null);
 	const [gameExists, setGameExists] = useState(true);
 	const [gameIdToJoin, setGameIdToJoin] = useState<string | null>(null);
@@ -16,7 +20,8 @@ const Home: React.FC<any> = () => {
 
 	const [joiningGame, setJoiningGame] = useState(false);
 
-	const history = useHistory();
+	const navigate = useNavigate();
+	// const history = useHistory();
 
 	const createGame = async () => {
 		setJoinGameInput(false);
@@ -37,14 +42,14 @@ const Home: React.FC<any> = () => {
 
 	const toggleJoinGameInput = () => setJoinGameInput(!joinGameInput);
 
-	const startGame = () =>
-		history.push({
-			pathname: "/game",
+	const startGame = () => {
+		navigate(`/game?gameId=${gameId}&mode=CREATE`, {
 			state: {
 				gameId,
 				mode: "CREATE",
 			},
 		});
+	};
 
 	const joinGame = async () => {
 		if (!gameIdToJoin) return null;
@@ -57,8 +62,7 @@ const Home: React.FC<any> = () => {
 				setGameExists(true);
 				setJoiningGame(false);
 				if (gameExists.online !== 2) {
-					history.push({
-						pathname: "/game",
+					navigate(`/game?gameId=${gameIdToJoin}`, {
 						state: {
 							gameId: gameIdToJoin,
 							mode: "JOIN",
@@ -100,6 +104,15 @@ const Home: React.FC<any> = () => {
 		}
 	};
 
+	const playAgainstComputer = () => {
+		navigate(`/game?gameId=COMPUTER&mode=CREATE`, {
+			state: {
+				gameId: "COMPUTER",
+				mode: "CREATE",
+			},
+		});
+	};
+
 	return (
 		<div
 			className="flex flex-col w-screen items-center justify-center px-4"
@@ -115,6 +128,7 @@ const Home: React.FC<any> = () => {
 					<p className="font-light text-sm md:text-xl">Online</p>
 				</span>
 				<h3 className="text-xl text-center pt-4">Get Started</h3>
+
 				<div className="flex justify-center flex-wrap">
 					<div className="px-0 py-2 md:px-3 md:py-0">
 						<button
@@ -132,6 +146,15 @@ const Home: React.FC<any> = () => {
 							{joiningGame ? "Joining..." : "Join a game"}
 						</button>
 					</div>
+				</div>
+				<div className="px-0 py-2 md:px-3 md:py-0">
+					<p className={"text-center mb-2"}>Or</p>
+					<button
+						className="border border-black bg-transparent text-black hover:bg-black hover:text-white px-4 py-3 transition"
+						onClick={playAgainstComputer}
+					>
+						Play against Computer
+					</button>
 				</div>
 				{gameId && (
 					<div className="flex items-center flex-col text-center py-4 px-4">
@@ -182,7 +205,9 @@ const Home: React.FC<any> = () => {
 								className="bg-gray-100 px-4 py-3 rounded-md w-48"
 								placeholder="Game ID"
 								onChange={(e) => {
-									setGameIdToJoin(e.target.value);
+									setGameIdToJoin(
+										(e.target as any)?.value as any
+									);
 								}}
 							/>
 							<button

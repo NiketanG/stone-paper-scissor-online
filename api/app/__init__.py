@@ -1,3 +1,6 @@
+
+from dotenv import load_dotenv
+load_dotenv()
 from flask import Flask
 from app.config import Config
 from flask_migrate import Migrate
@@ -10,9 +13,8 @@ migrate = Migrate()
 socketio = SocketIO()
 cors = CORS()
 
-
 def create_app(config_class=Config):
-    app = Flask(__name__, static_folder="../../web/build/static", template_folder="../../web/build")
+    app = Flask(__name__, static_folder="../../web/dist/assets", template_folder="../../web/dist")
     app.config.from_object(Config)
     db.init_app(app)
     cors.init_app(app)

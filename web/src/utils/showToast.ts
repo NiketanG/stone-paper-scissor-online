@@ -9,14 +9,15 @@ const ToastConfig: ToastOptions = {
 	pauseOnHover: false,
 	closeOnClick: true,
 	transition: Slide,
-	bodyClassName: "flex items-center flex-row  text-black rounded-lg",
+
+	bodyClassName: "flex items-center flex-row text-black rounded-lg",
 };
 
 export const errorToast = (text = "An error occured") =>
 	toast(text, {
 		...ToastConfig,
 		type: "error",
-		bodyClassName: "flex items-center flex-row  text-white rounded-lg",
+		bodyClassName: "flex items-center flex-row text-red-500 rounded-lg",
 	});
 
 export const showToast = (text: string) =>
